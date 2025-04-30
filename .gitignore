@@ -1,0 +1,34 @@
+# Entorno virtual
+venv/
+.venv/
+311-venv/ 
+
+# Archivos Python compilados
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Bases de datos temporales
+*.db
+*.sqlite
+
+# Archivos de logs
+*.log
+
+# Archivos de Jupyter (si llegás a usarlos)
+.ipynb_checkpoints
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Configuraciones del editor
+.vscode/
+.idea/
+
+# Cache de pip
+pip-wheel-metadata/
+
+# Archivos grandes que no quiero subir
+data/homeflix.duckdb
+data/ratings.csv
