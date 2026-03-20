@@ -1,10 +1,4 @@
 services:
-  data:
-    image: busybox:1.35-uclibc
-    container_name: data-container
-    volumes:
-      - data-volume:/data
-
   backend:
     build:
       context: ./backend
@@ -12,12 +6,9 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - data-volume:/app/data
-    depends_on:
-      - data
+      - ./data:/app/data
     networks:
       - flix_network
-
   frontend:
     build:
       context: ./frontend
@@ -27,15 +18,11 @@ services:
     environment:
       - BACKEND_HOST=backend
     volumes:
-      - data-volume:/app/data
+      - ./data:/app/data
     depends_on:
       - backend
     networks:
       - flix_network
-
-volumes:
-  data-volume:
-
 networks:
   flix_network:
     driver: bridge

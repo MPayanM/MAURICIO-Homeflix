@@ -16,7 +16,9 @@ with col2:
 st.title("🎬 HomeFlix - Movie Recommender and Insights")
 section = st.sidebar.radio("Choose a section", ["📊 Data Analysis", "🎥 Movie Recommendations"])
 
-db_path = os.path.join("/app/data", "homeflix.duckdb")
+
+db_path = "/app/data/homeflix.duckdb"
+
 
 
 
